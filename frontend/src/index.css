@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-app: #060B14;
+    --bg-surface: #0B1325;
+    --bg-surface-elevated: #111C35;
+    --bg-surface-hover: #172442;
+    --border-subtle: rgba(148, 163, 184, 0.16);
+    --border-strong: rgba(56, 189, 248, 0.30);
+    --primary-blue: #0284C7;
+    --primary-cyan: #0EA5E9;
+    --accent-teal: #0D9488;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: #F8FAFC;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    selection-background-color: #0284C7;
+    selection-color: #FFFFFF;
+    overflow-x: hidden;
+    line-height: 1.55;
+  }
+}
+
+/* -------------------------------------------------------------
+   CONSILIUMMD DESIGN SYSTEM: UI SURFACES, BUTTONS & CARDS
+   ------------------------------------------------------------- */
+
+/* Standard Medical Cards & Panels */
+.card-surface {
+  background: #0B1325;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 1.125rem;
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.45);
+}
+
+.card-elevated {
+  background: #111C35;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 1.125rem;
+  box-shadow: 0 10px 35px -4px rgba(0, 0, 0, 0.55);
+}
+
+.card-subtle {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 0.875rem;
+}
+
+/* Glassmorphism primitives (Crisp & High-Contrast) */
+.glass-panel {
+  background: rgba(11, 19, 37, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.20);
+  border-radius: 1.125rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-glow {
+  background: rgba(14, 24, 48, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  border-radius: 1.125rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), 0 0 24px rgba(14, 165, 233, 0.12);
+}
+
+.glass-panel-emerald {
+  background: rgba(6, 32, 24, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 1.125rem;
+}
+
+.glass-panel-amber {
+  background: rgba(36, 24, 8, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 1.125rem;
+}
+
+.glass-panel-purple {
+  background: rgba(28, 16, 48, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  border-radius: 1.125rem;
+}
+
+.glass-panel-rose {
+  background: rgba(38, 10, 22, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 63, 94, 0.45);
+  border-radius: 1.125rem;
+}
+
+/* Consistent Button Utilities (Large & Prominent) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #0284C7;
+  border: 1px solid #0369A1;
+  border-radius: 0.75rem;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3);
+}
+.btn-primary:hover {
+  background-color: #0369A1;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.45);
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #F1F5F9;
+  background-color: #1E293B;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 0.75rem;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background-color: #334155;
+  color: #FFFFFF;
+  border-color: rgba(148, 163, 184, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #38BDF8;
+  background-color: transparent;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  border-radius: 0.75rem;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background-color: rgba(56, 189, 248, 0.14);
+  border-color: rgba(56, 189, 248, 0.7);
+  color: #7DD3FC;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #E11D48;
+  border: 1px solid #BE123C;
+  border-radius: 0.75rem;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(225, 29, 72, 0.3);
+}
+.btn-danger:hover {
+  background-color: #BE123C;
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem;
+  border-radius: 0.625rem;
+  color: #CBD5E1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.btn-icon:hover {
+  color: #FFFFFF;
+  background-color: #1E293B;
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+/* Status Badges (Prominent & Clear) */
+.badge-success {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #34D399;
+  background-color: rgba(6, 78, 59, 0.75);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #FBBF24;
+  background-color: rgba(120, 53, 15, 0.75);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #FB7185;
+  background-color: rgba(136, 19, 55, 0.75);
+  border: 1px solid rgba(244, 63, 94, 0.45);
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #38BDF8;
+  background-color: rgba(12, 74, 110, 0.75);
+  border: 1px solid rgba(14, 165, 233, 0.45);
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Skeleton Loading Animation */
+@keyframes skeletonPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
+}
+
+.skeleton-box {
+  background: #1E293B;
+  border-radius: 0.5rem;
+  animation: skeletonPulse 1.8s ease-in-out infinite;
+}
+
+/* Subtle Medical Heartbeat */
+@keyframes softHeartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.12); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+  70% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: softHeartbeat 1.5s ease-in-out infinite;
+}
+
+/* Clean Medical Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #060B14;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0284C7;
+}
